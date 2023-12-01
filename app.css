@@ -1,0 +1,844 @@
+/*MOBILE FIRST*/
+
+/* ============================== GENERAL STYLES ============================== */
+*, *::before, *::after, 
+h1, h2, h3, h4, p, a, input, button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    background: none;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+    font-size: 10px;  /* ROOT FONT SIZE CONVERTED TO 10PX FOR EASIER PIXELS TO REM CONVERSIONS  example; 32px = 3.2rem*/
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #F1F1F1;
+}
+
+/* ============================== REPEATED STYLES ============================== */
+
+/*============== LAYOUT ===============*/
+header, .search-bar, .store-name-admin-menu, 
+.trial-callout, .onboarding-step {
+    position: relative;
+}
+
+.header-popup, .check-mark-admin-menu, 
+.close-trial-callout-btn, .step-illustration {
+    position: absolute;
+}
+
+header,
+.header-popups,
+.alert-panel-trigger,
+.alert-panel,
+.alert-panel > div,
+.admin-menu-trigger,
+.admin-menu-item-wrapper, 
+.profile-placeholder-trigger,
+.trial-callout,
+.trial-callout-cta,
+.setup-progress, 
+.step-btns,
+.store-name-admin-menu,
+.onboarding-steps-wrapper,
+.step-triggers, .step-heading button  {
+    display: flex;
+}
+
+.setup-guide, .setup-guide button, 
+.onboarding-step {
+    display: grid;
+}
+
+.alert-panel-trigger, .profile-placeholder-trigger,
+.close-trial-callout-btn, .step-checkbox, .setup-guide button {
+    display: grid;
+    place-content: center;
+}
+
+.site-logo-desktop, 
+.admin-menu,
+.alert-panel, 
+.store-name-trigger {
+    display: none;
+}
+
+header,
+.header-popups,
+.admin-menu-trigger, 
+.admin-menu-item-wrapper,
+.profile-placeholder-trigger,
+.trial-callout-cta, .setup-progress,
+.store-name-admin-menu  {
+    gap: .8rem;
+}
+
+.alert-panel,
+.alert-panel > div, 
+.trial-callout {
+    gap: 1.6rem;
+}
+
+.alert-panel, 
+.admin-menu,
+.trial-callout {
+    flex-direction: column;
+}
+
+header, .trial-callout {
+    justify-content: space-between;
+}
+
+header, 
+.header-popups,
+.alert-panel-trigger, 
+.alert-panel > div, 
+.admin-menu-trigger,
+.admin-menu-item-wrapper, 
+.profile-placeholder-trigger,
+.profile-placeholder-admin-menu,
+.trial-callout-cta, 
+.setup-progress, 
+.store-name-admin-menu,
+.step-triggers, 
+.step-heading button  {
+    align-items: center;
+}
+
+header, .trial-callout, 
+.search-bar, .search-input,
+.setup-wrapper  {
+    width: 100%;
+}
+
+.site-logo-wrapper, .site-logo-mobile, .alert-panel-trigger {
+    width: 3.2rem;
+}
+
+.search-icon, .bell-icon, 
+.alert-panel-icons, .x-icon-trial-callout,
+.setup-arrow, .store-icon-admin-menu {
+    width: 2rem;
+    height: 2rem;
+}
+
+.site-logo-wrapper, .site-logo-mobile, .search-input, 
+.alert-panel-trigger, .admin-menu-trigger, .admin-menu-item-wrapper {
+    height: 3.2rem;
+}
+
+.profile-placeholder, .setup-guide button {
+    width: 2.8rem;
+    height: 2.8rem;
+}
+
+.search-icon, .admin-menu-trigger {
+    padding: .2rem;
+}
+
+.alert-panel, .alert-panel-message {
+    padding: 1.6rem;
+}
+
+.setup-wrapper, .setup-guide, 
+.onboarding-step {
+    padding: .8rem;
+}
+
+.admin-menu-item:nth-of-type(2),
+.admin-menu-item:nth-of-type(7) {
+    padding-bottom: .4rem;
+    border-bottom: .075rem solid #E1E1E1;
+ } 
+
+.alert-panel, .alert-panel-heading, 
+.alert-panel-message, .setup-wrapper,
+.admin-menu-item-wrapper, .store-name-admin-menu,
+.admin-name-admin-menu,
+.step-heading button {
+    color: #303030;
+}
+
+.search-input, .search-input::placeholder {
+    color: #B5B5B5;
+}
+
+.store-name-trigger, .trial-callout-text {
+    color: #E3E3E3;
+}
+
+.admin-email-admin-menu, .step-details p {
+    color: #616161;
+}
+
+button, .profile-placeholder-trigger {
+    cursor: pointer;
+}
+
+.profile-placeholder-trigger,
+.trial-callout-cta, .setup-guide button,
+.step-btn, .step-checkbox {
+    border-radius: .6rem;
+}
+
+.search-input,
+.alert-panel-trigger,
+.admin-menu-trigger, .admin-menu-item-wrapper,
+.store-name-admin-menu {
+    border-radius: .8rem;
+}
+
+.search-input, .alert-panel-trigger,
+.admin-menu-trigger, .admin-menu-item-link,
+.trial-callout-cta {
+    outline: none;
+}
+
+.alert-panel-trigger:focus, .admin-menu-trigger:focus,
+.trial-callout-cta:focus, .step-btn:focus, 
+.step-btn-clear:focus, .step-checkbox:focus {
+    outline: .2rem solid #005BD3;
+    outline-offset: .1rem;
+}
+
+.admin-email-admin-menu, .setup-guide-subtext, 
+.admin-menu-item-wrapper, .setup-progress-label {
+    font-weight: 400;
+}
+
+.search-input, .alert-panel-trigger,
+.admin-menu-trigger, .profile-placeholder-trigger,
+.profile-placeholder-admin-menu,
+.admin-name-admin-menu, .trial-callout-text,
+.step-details p, .step-heading button  {
+    font-weight: 500;
+}
+
+.store-name-admin-menu, .alert-panel-message, 
+.alert-panel-heading, .trial-callout-cta,
+.setup-guide-heading, .selected-step .step-heading button,
+.step-btn {
+    font-weight: 600;
+}
+
+.search-input, .store-name-admin-menu,
+.admin-menu-item-wrapper, .trial-callout-text,
+.setup-guide-subtext, .step-heading button,
+.step-details p {
+    font-size: 1.3rem;
+}
+
+.alert-panel-trigger, .admin-menu-trigger, 
+.profile-placeholder-trigger,
+.admin-email-admin-menu, .trial-callout-cta,
+.setup-progress-label, .step-btn {
+    font-size: 1.2rem;
+    line-height: 130%;
+}
+
+.alert-panel-heading, .setup-guide-heading,
+.step-details > p a {
+    font-size: 1.4rem;
+}
+
+.search-input, .trial-callout-text,
+.alert-panel-heading, .alert-panel-message,
+.admin-menu-item-wrapper, .profile-placeholder-admin-menu,
+.store-name-admin-menu, .admin-name-admin-menu,
+.setup-guide-heading, .setup-guide-subtext,
+.step-heading button, .step-details p {
+    line-height: 140%;
+ }
+
+.bell-icon, .x-icon-trial-callout {
+    fill: #E3E3E3;
+}
+
+.alert-panel-trigger, 
+.admin-menu-trigger,
+.trial-callout-cta, 
+.setup-arrow,
+.onboarding-steps-trigger,
+.close-trial-callout-btn, 
+.step-btn {
+    transition: .3s background ease-in;
+}
+
+.selected-step,
+.step-checkbox, .checkbox-icon,
+.setup-progress-bar::-webkit-progress-value {
+    transition: .2s all ease-in;
+}
+
+/*====================================== HEADER =============================*/
+header {
+    padding: 0 1.6em;
+    height: 5.6rem;
+    background-color: #1C181D;
+}
+
+.search-icon {
+    position: absolute;
+    inset: 0;
+    margin: auto 0 auto .8rem;
+    fill: #b5b5b5;
+}
+
+.search-input {
+    padding: .8em;
+    text-indent: 2.6rem;
+    background-color: #303030;
+    border: .1rem solid #616161;
+}
+
+.search-input:focus  {
+    border: .2rem solid #FFF;
+}
+
+.search-input:hover {
+    border: .1rem solid #E1E1E1;
+}
+
+.search-input:active {
+    border: .2rem solid #FFF;
+}
+
+.alert-panel-trigger:hover {
+    background: #616161
+}
+
+.alert-panel-trigger:is(:focus, :active) {
+    background: #656266;
+}
+
+.alert-panel {
+    width: calc(100% - 3.2rem);
+    margin: 0 auto;
+}
+
+.header-popup {
+    animation: .3s appear linear 1;
+}
+
+@keyframes appear {
+    from {
+        transform: scale(.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.header-popup {
+    z-index: 1000;
+    top: calc(100% + 1.2rem);
+    left: 0;
+    right: 0;
+    background-color: #FFF;
+    border: .1rem solid #DBDBDB;
+    border-radius: 1.4rem;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
+}
+
+.alert-panel-heading  {
+    margin-right: auto;
+}
+
+.alert-panel-icons {
+    fill: #616161;
+}
+
+.alert-panel-message {
+    text-align: center;
+    font-size: 1.3rem;
+    background: #F1F1F1;
+}
+
+.admin-menu-trigger:focus {
+    background: #656266;
+}
+
+.admin-menu-trigger:hover {
+    background: #616161;
+}
+
+.admin-menu-trigger:active {
+    background: #656266;
+}
+
+.profile-placeholder {
+    color: rgba(0, 0, 0, 0.40);
+    background: #36FBA1;
+}
+
+.admin-menu {
+    gap: .4rem;
+    padding-block: .6rem;
+    width: calc(100% - 3.2rem); /*To accomodate devices with a viewport of 320px or less (The right margin makes part of the pop up overflow to the left in devices with a viewport of 320px).*/
+    max-width: 32rem;
+    margin: 0 1.6rem auto auto;
+    list-style: none;
+}
+
+.admin-menu-item {
+    padding-inline: .6rem;
+    width: calc(100% + .2rem);
+}
+
+.admin-menu-item-wrapper {
+    font-style: normal;
+    padding: .6rem;
+}
+
+.admin-menu-item-link {
+    padding: .6rem;
+}
+
+.admin-menu-item-link:hover {
+    background:#F1F1F1;
+}
+
+.admin-menu-item-link:focus {
+    border: .2rem solid #005BD3;
+}
+.admin-menu-item-link:hover {
+    background:#F1F1F1;
+}
+
+.admin-menu-item-link:active {
+    background: #F0F0F0;
+}
+
+.store-name-admin-menu {
+    position: relative;
+    padding: .4rem 1.2rem .4rem .8rem;
+    background: #F1F1F1;
+}
+
+.profile-placeholder-admin-menu {
+    display: inline-flex;
+    justify-content: center;
+    font-size: 1.05rem;
+    border-radius: .525rem;
+}
+
+.check-mark-admin-menu {
+    inset: 0;
+    margin: auto 1.2rem auto auto;
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.store-icon-admin-menu {
+    fill: #303030;
+}
+
+.admin-info-admin-menu {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0;
+    padding: .8rem;
+    height: 5rem;
+}
+
+/* ============================== TRIAL CALLOUT ============================== */
+
+    .trial-callout {
+        align-items: flex-start;
+        margin-top: 3.2rem;
+        padding: 1.2rem .8rem 1.2rem 1.6rem;
+        background: #1A1A1A;
+        transition: .4s opacity ease-in-out;
+    }
+
+    .trial-callout-text {
+        width: calc(100% - 3.6rem);
+    }
+
+    .trial-callout-cta {
+        padding: .6rem 1.2rem;
+        border: .1rem solid rgba(0, 0, 0, 0.10);
+        background: #FFF;
+        box-shadow: 0rem -.1rem 0rem 0rem #B5B5B5 inset;
+        color: #323232;
+    }
+
+    .trial-callout-cta:focus {
+        box-shadow: 0rem -.1rem 0rem 0rem #B5B5B5 inset;
+    }
+
+    .trial-callout-cta:hover {
+        background: #F7F7F7;
+    }
+
+    .trial-callout-cta:active {
+        background: #F7F7F7;
+        box-shadow: 0rem .2rem 1.5rem 0rem #E2E2E2 inset;
+        border: none;
+    }
+
+    .close-trial-callout-btn {
+        z-index: 1;
+        width: 3.6rem;
+        height: 3.6rem;
+        top: 1.2rem;
+        right: .8rem;
+        border-radius: 1rem;
+    }
+
+/* ============================== SET UP ============================== */
+/* SET UP GUIDE */
+.setup-wrapper {
+    margin: 1.6rem 0 3.2rem;
+    border: 1px solid #DBDBDB;
+    background: #FFF;
+    box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05);
+}
+
+.setup-guide {  
+    grid-template-columns: 1fr 28px;
+    grid-template-areas: "heading heading arrow"
+                         "paragraph paragraph arrow"
+                         "progress progress .";
+}
+
+.setup-guide-heading {
+    grid-area: heading;
+}
+
+.setup-guide-subtext {
+    grid-area: paragraph;
+    margin-top: .4rem;
+}
+
+.setup-guide button {
+    grid-area: arrow;
+}
+
+.setup-arrow {
+    fill: #4A4A4A;
+}
+
+.setup-arrow-hidden {
+    transform: rotate(180deg);
+}
+
+.setup-guide button:focus {
+    outline: 2px solid #005BD3;
+    background: none;
+}
+
+.setup-guide button:hover {
+    background: #F1F1F1;
+}
+
+.setup-guide button:active {
+    background: #F0F0F0;
+}
+
+.setup-progress  {
+    grid-area: progress;
+    margin-top: 1.6rem;
+}
+
+.setup-progress-bar {
+    width: 7.2rem;
+    height: .4rem;
+    appearance: none;
+    border: none;
+    background-color: #E3E3E3;
+    overflow: hidden;
+    border-radius: .2rem;
+  }
+
+  .setup-progress-bar::-webkit-progress-value {
+    background-color: #1A1A1A;
+  }
+
+  .setup-progress-bar::-webkit-progress-bar {
+    background-color: #f0f0f0;
+  }
+
+
+/* ONBOARDING STEPS */
+
+.onboarding-steps-wrapper {
+    list-style-type: none;
+    flex-direction: column;
+    max-height: 50rem;
+    gap: .2rem;
+    margin-top: 1.6em;
+    overflow: hidden;
+    opacity: 1;
+    transition: .3s all ease-in-out;
+}
+
+.steps-hidden {
+    max-height: 0;
+    margin: 0;
+    opacity: 1;
+}
+
+.onboarding-step {
+    grid-template-columns: 24px 1fr 1fr;
+    grid-template-areas: "triggers triggers triggers"
+                          ". details details";
+    column-gap: .8rem;
+    border-radius: 1rem;
+}
+
+.step-triggers {
+    grid-area: triggers;
+    gap: .8em;
+}
+
+.step-details {
+    grid-area: details;
+    display: none;
+    flex-direction: column;
+    margin-top: 1.6rem;
+    row-gap: 1.6rem;
+    max-width: 48.3855rem;
+}
+
+.step-btns {
+    gap: 1.6rem ;
+}
+
+.selected-step {
+    background: #F3F3F3;
+    padding: .8rem .8rem 1.2rem .8rem;
+}
+
+.step-checkbox, .checkbox-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+.checkbox-icon {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.not-completed-icon {
+    stroke: #8A8A8A;
+}
+
+.step-checkbox:hover .not-completed-icon circle{
+    stroke-dasharray: 0 0;
+}
+
+.step-checkbox:active .not-completed-icon circle {
+    fill: #D9D9D9;
+}
+
+.spinner-icon {
+    stroke: #1C181D;
+    animation: .4s spin linear infinite;
+}
+
+.completed-icon circle {
+    fill: #1C181D;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.completed-icon {
+    animation: zoom-in-spin .3s linear;
+}
+
+@keyframes zoom-in-spin {
+    from {
+        transform: scale(0) rotate(270deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) rotate(360deg);
+        opacity: 1;
+    }
+}
+
+
+.step-details a {
+    color: #005BD3;
+}
+
+.step-illustration {
+    display: none;
+    inset: 0;
+    margin: auto .8rem auto auto;
+}
+
+.step-btn {
+    padding: .6rem 1.2rem;
+}
+
+.step-btn-clear {
+    color: #323232;
+    background: none;
+}
+
+.step-btn-clear:is(:focus, :focus-visible) {
+    outline-offset: 0;
+    background: #FFF;
+}
+
+.step-btn-clear:hover {
+    background: #E7E7E7;
+}
+
+.step-btn-clear:active {
+    background: #E0E0E0;
+}
+
+.step-btn-dark {
+    color: #F6F3F6;
+    background: #404040;
+    box-shadow: 0px 2px 0px 0px #000, 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333;
+}
+
+.step-btn-dark, .step-btn-dark:focus {
+    border-top: 1.5px solid rgba(255, 255, 255, 0.20);
+    border-right: 1.5px solid rgba(255, 255, 255, 0.20);
+    border-left: 1.5px solid rgba(255, 255, 255, 0.20);
+}
+
+.step-btn-dark:focus {
+    box-shadow: 0px 0px 0px 1.5px #333;
+    outline-offset: .3rem;
+}
+
+.step-btn-dark:hover {
+    background: #2A2A2A;
+}
+
+.step-btn-dark:active {
+    background: #2B2B2B;
+    box-shadow: 0px 0px 0px 1.5px #333, 0px 3px 0px 0px #000 inset;
+    border: none;
+}
+
+.sr-only {
+    display: block;
+    font-size: 0px;
+    height: 0px;
+    width: 0px;
+    margin: 0px;
+}
+
+/* ============================== UTILITY CLASSES ============================== */
+
+.active {
+    display: flex;
+}
+
+.hidden {
+    display: none;
+}
+ 
+/* ============================== MEDIA QUERY ============================== */
+@media screen and (min-width: 1024px) {
+
+    .site-logo-desktop, .site-logo-wrapper {
+        display: block;
+        width: 10.5rem;
+        height: 3rem;
+    }
+
+    .alert-panel-trigger, .admin-menu-trigger {
+        background-color: #303030;
+    }
+
+    .alert-panel, .admin-menu {
+        top: calc(100% + .8rem);
+        margin: 0 1.6rem auto auto;
+    }
+
+    .trial-callout, .setup-wrapper {
+        max-width: 80rem;
+    }
+
+    /*===================== HEADER ====================*/
+    header {
+        display: grid; /*Switched to CSS grid because in the figma design, the space on the left and right side of the search bar are not equal*/
+        grid-template-columns: 1fr 48rem 1fr;
+    }
+
+    .site-logo-wrapper {
+        justify-self: self-start;
+    } 
+
+    .search-bar {
+        justify-self: center;
+    }
+
+    .header-popups {
+        justify-self: end;
+    }
+    
+    .site-logo-mobile {
+        display: none;
+    }
+
+    .admin-menu-trigger {
+        padding: 0 .2rem 0 .8rem;
+    }
+
+    .store-name-trigger {
+        display: unset;
+    }
+
+    .alert-panel {
+        width: 38.3rem;
+    }
+    
+    /*====================== CALLOUT =====================*/
+    .trial-callout {
+        flex-direction: row;
+        align-items: center;
+        gap: .8rem;
+        border-radius: .8rem;
+    }
+
+    .trial-callout-text {
+        margin-right: auto;
+        width: fit-content;
+    }
+
+    .close-trial-callout-btn {
+        position: static;
+        width: 3.2rem;
+        height: 3.2rem;
+    }
+
+    /*==================== ONBOARDING =====================*/
+    .setup-wrapper {
+        border-radius: 1.8rem;
+    }
+
+    .step-illustration {
+        display: block;
+    }
+}
